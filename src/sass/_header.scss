@@ -1,0 +1,228 @@
+// .header
+.header {
+  position: relative;
+  min-height: 230px;
+  margin: 0 auto;
+  padding-top: 40px;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('../images/home-header-bg-phone@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx),
+    (min-resolution: 2dpi) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../images/home-header-bg-phone@2x.jpg');
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../images/home-header-bg-tabet@1x.jpg');
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 2dppx),
+      (min-resolution: 2dpi) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/home-header-bg-tabet@2x.jpg');
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../images/home-header-bg-desktop@1x.jpg');
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 2dppx),
+      (min-resolution: 2dpi) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/home-header-bg-desktop@2x.jpg');
+    }
+  }
+}
+
+// .nav
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  // .navbar
+  &bar {
+    display: flex;
+
+    // .navbar__item
+    &__item {
+      position: relative;
+      margin-right: 40px;
+      padding: 5px 0;
+
+      // .navbar__item:last-child
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    // .navbar__link
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.2;
+
+      // .navbar__link--active::after
+      &--active::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px #ff001b;
+        background-color: #ff001b;
+      }
+    }
+  }
+}
+
+// .logo
+.logo {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  flex-shrink: 1;
+
+  // .logo__icon
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 8px;
+    }
+    @media screen and (min-width: 1200px) {
+      margin-right: 10px;
+    }
+  }
+
+  // .logo__name
+  &__name {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+  }
+}
+
+// .search-form
+.search-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: 576px) {
+    width: 360px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 440px;
+  }
+
+  // .search-form__field
+  &__field {
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid #ffffff;
+
+    // .search-form__field::placeholder
+    &::placeholder {
+      color: #ffffff;
+    }
+
+    // .search-form__field:focus, :hover
+    &:focus,
+    &:hover {
+      outline: none;
+      // .search-form__field:focus, :hover::placeholder
+      &::placeholder {
+        font-size: 21px;
+      }
+    }
+  }
+
+  // .search-form__submit
+  &__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    background-color: transparent;
+    border: transparent;
+  }
+
+  // .search-form__icon
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// .notification
+.notification {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(255, 0, 27, 1);
+}

@@ -1,0 +1,36 @@
+// .btn-to-top
+.btn-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 0;
+  line-height: 1;
+  background-color: #ff6b08;
+  animation: bounce-up 1200ms linear infinite alternate both;
+  opacity: 0.75;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  // .btn-to-top:hover
+  &:hover {
+    opacity: 1;
+  }
+  // .btn-to-top__icon
+  &__icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+  }
+}
+
+// Animation
+@keyframes bounce-up {
+  from {
+    transform: translateY(-5px);
+  }
+
+  to {
+    transform: translateY(5px);
+  }
+}

@@ -1,0 +1,101 @@
+// .movies-gallery
+.movies-gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media screen and (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+// .movie-card
+.movie-card {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  // .movie-card:hover, :focus
+  &:hover,
+  &:focus {
+    transform: scale(1.03);
+    box-shadow: 2px 2px 3px 3px rgba(255, 107, 8, 0.5);
+  }
+
+  // .movie-card img
+  & img {
+    background-color: #8c8c8c;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 768px) {
+      height: 455px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      height: 574px;
+    }
+  }
+
+  // .movie-card__title
+  &__title {
+    margin-top: 10px;
+    max-width: 280px;
+
+    font-family: 'Roboto';
+    font-size: 12px;
+    line-height: 1.1667;
+    text-transform: uppercase;
+    color: #123123;
+
+    @media screen and (min-width: 768px) {
+      max-width: 336px;
+      line-height: 1.3333;
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-width: 395px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  // .movie-card__ganres
+  &__ganres {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3333;
+
+    color: #ff6b01;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  // .movie-card__rating
+  &__rating {
+    font-size: 12px;
+    line-height: 1.17;
+    vertical-align: middle;
+
+    color: #ffffff;
+    background-color: #ff6b01;
+    border-radius: 5px;
+    padding: 1px 9px;
+    @media screen and (min-width: 1200px) {
+      padding: 3px 11px;
+    }
+  }
+}
