@@ -1,2 +1,3 @@
-console.log('hello world');
-console.log(document.querySelector('body'));
+import './js/api';
+import './js/home';
+import './js/genresData';
