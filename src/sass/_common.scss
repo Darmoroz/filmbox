@@ -101,14 +101,32 @@ main {
   transition: background 500ms ease;
 
   // .btn:hover, :focus
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: #ff6b08;
+  }
+
+  // .btn__block
+  &__block {
+    display: flex;
+    gap: 12px;
   }
 
   // .btn--active
   &--active {
     background-color: #ff6b08;
+  }
+
+  // .btn--modify
+  &--modify {
+    color: #111111;
+    border-color: #111111;
+    transition: all 250ms ease;
+
+    // .btn--modify:hover, :focus
+    &:hover {
+      color: #ffffff;
+      border-color: transparent;
+    }
   }
 }
 

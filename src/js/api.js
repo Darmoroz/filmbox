@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-const ACCESS_TOKEN =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDc5OTA1N2VkMWUzY2JiZmVjOTBhNzYyZmUxOWQ5OCIsInN1YiI6IjY0OGMyNjg0NTU5ZDIyMDExYzRiMzgwYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1RdcZoV5IPYOcFbCXJNJ1aLnntukhilkV6un6kG6ZoU';
+import { ACCESS_TOKEN } from './refs';
 
 const moviesAPI = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
