@@ -9,4 +9,5 @@ function removeListener() {
   modal.removeEventListener('click', closeModalByClickBackdropOrBtn);
   playTrailerBtn.removeEventListener('click', renderTrailer);
 }
+
 export default removeListener;

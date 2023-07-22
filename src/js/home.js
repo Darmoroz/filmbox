@@ -1,10 +1,20 @@
 // import { Loading } from 'notiflix';
+import throttle from 'lodash.throttle';
 import renderTrendingMovies from './render/renderTrendingMovies';
+import handleScroll from './toTopBtn';
+import { toggleThemeBtn } from './refs';
+import { setTheme, toggleTheme } from './theme';
 
 if (document.title === 'Filmsbox') {
-  window.addEventListener('DOMContentLoaded', () => {
-    renderTrendingMovies();
-  });
-}
+  if (!window.localStorage.getItem('mainThemeFilmsbox')) {
+    window.localStorage.setItem('mainThemeFilmsbox', 'light');
+    document.body.classList.add('light-theme');
+  } else {
+    setTheme();
+  }
 
-//* show trailer by btn click
+  renderTrendingMovies();
+
+  document.body.addEventListener('scroll', throttle(handleScroll, 500));
+  toggleThemeBtn.addEventListener('click', toggleTheme);
+}

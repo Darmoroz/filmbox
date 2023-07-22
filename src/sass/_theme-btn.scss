@@ -60,15 +60,17 @@
     // .theme__label input
     & input {
       opacity: 0;
+      cursor: pointer;
     }
   }
 
   // .theme__icon
   &__icon {
+    position: absolute;
     fill: #ffffff;
     width: 24px;
     height: 24px;
-    position: absolute;
+    pointer-events: none;
 
     // .theme__icon--light
     &--light {

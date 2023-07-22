@@ -1,0 +1,46 @@
+// .dark-theme
+.dark-theme {
+  background-color: #272e34;
+
+  // .dark-theme .movie-card
+  & .movie-card {
+    box-shadow: 2px 2px 25px 2px rgba(204, 204, 204, 0.25);
+
+    // .dark-theme .movie-card__title
+    &__title {
+      color: #ffffff;
+    }
+  }
+
+  // .dark-theme .footer
+  & .footer {
+    background-color: #272e34;
+    color: #ffffff;
+  }
+
+  // .dark-theme .modal__content
+  & .modal__content {
+    background-color: #272e34;
+    color: #ffffff;
+
+    // .dark-theme .modal__content svg
+    & svg {
+      stroke: #ffffff;
+    }
+
+    // .dark-theme .modal__content .movie__info-block--dark
+    & .movie__info-block--dark {
+      color: #ffffff;
+    }
+  }
+
+  // .dark-theme .btn
+  & .btn {
+    background-color: #ffffff;
+
+    // .dark-theme .btn:hover
+    &:hover {
+      background-color: #ff6b08;
+    }
+  }
+}
