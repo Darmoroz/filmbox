@@ -1,14 +1,13 @@
-import getAllGenres from '../getAllGenres';
+import { genres } from '../home';
 import { BASE_POSTER_URL } from '../refs';
 
-async function createMarkupGalleryMoviesCard(movies) {
-  const genres = await getAllGenres();
+function createMarkupGalleryMoviesCard(movies) {
   return movies
     .map(
       ({
         poster_path,
         title,
-        genre_ids,
+        genre_ids = [],
         vote_average,
         id,
       }) => `<li class="movie-card" data-id="${id}">
@@ -24,7 +23,7 @@ async function createMarkupGalleryMoviesCard(movies) {
             .join(' ')}
           </p>
         </div>
-         <span class="movie-card__rating">${vote_average.toFixed(1)}</span>
+         <span class="movie-card__rating">${vote_average?.toFixed(1)}</span>
         </li>`
     )
     .join('');

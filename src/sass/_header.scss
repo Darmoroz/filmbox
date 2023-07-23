@@ -279,6 +279,7 @@
     padding: 0;
     background-color: transparent;
     border: transparent;
+    cursor: pointer;
   }
 
   // .search-form__icon
@@ -286,13 +287,4 @@
     width: 24px;
     height: 24px;
   }
-}
-
-// .notification
-.notification {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.2;
-  color: rgba(255, 0, 27, 1);
 }

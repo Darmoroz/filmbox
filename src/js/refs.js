@@ -15,3 +15,4 @@ export const modalFullMovie = document.getElementById('modal-full-movie');
 export const modalTrailer = document.getElementById('modal-trailer');
 export const toTopBtn = document.getElementById('to-top');
 export const toggleThemeBtn = document.getElementById('toggle-theme');
+export const searchMovieForm = document.getElementById('search-form');

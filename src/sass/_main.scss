@@ -6,6 +6,7 @@
   grid-template-columns: repeat(1, 240px);
   justify-content: center;
   margin-top: 24px;
+  margin-bottom: 100px;
 
   @media screen and (min-width: 576px) {
     grid-template-columns: repeat(2, 1fr);
