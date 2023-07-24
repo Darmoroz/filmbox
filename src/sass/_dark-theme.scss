@@ -42,5 +42,13 @@
     &:hover {
       background-color: #ff6b08;
     }
+
+    // .dark-theme .btn:disabled
+    &:disabled {
+      background-color: #8c8c8c;
+      color: #faebd7;
+      border-color: #8c8c8c;
+      cursor: auto;
+    }
   }
 }

@@ -122,6 +122,14 @@ main {
     border-color: #111111;
     transition: all 250ms ease;
 
+    // .btn--modify:disabled
+    &:disabled {
+      background-color: #8c8c8c;
+      color: #faebd7;
+      border-color: #8c8c8c;
+      cursor: auto;
+    }
+
     // .btn--modify:hover, :focus
     &:hover {
       color: #ffffff;

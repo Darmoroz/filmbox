@@ -1,7 +1,11 @@
 import playBtnImg from '../../images/play-btn.webp';
 import { BASE_POSTER_URL } from '../refs';
 
-function createMarkupMovieFullInfo(movie) {
+function createMarkupMovieFullInfo(
+  movie,
+  statusWathced = '',
+  statusQueue = ''
+) {
   const {
     poster_path,
     title,
@@ -30,9 +34,9 @@ function createMarkupMovieFullInfo(movie) {
         <p class="movie__description--title">About</p>
         <p class="movie__description--about">${overview}</p>
     </div>
-    <div class="btn__block">
-      <button class="btn btn--modify" type="button" data-value="watched">ADD TO WATCHED</button>
-      <button class="btn btn--modify" type="button" data-value="queue">ADD TO QUEUE</button>
+    <div class="btn__block" id="btn-collection">
+      <button class="btn btn--modify" type="button" data-value="watched" ${statusWathced}">ADD TO WATCHED</button>
+      <button class="btn btn--modify" type="button" data-value="queue" ${statusQueue}>ADD TO QUEUE</button>
     </div>
   </div></div>`;
 }

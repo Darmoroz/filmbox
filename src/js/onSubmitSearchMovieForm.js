@@ -1,17 +1,16 @@
 import { Notify } from 'notiflix';
 import renderSearchMovies from './render/renderSearchMovies';
-
-export let queryValue;
+import { queryMovie } from './refs';
 
 function onSubmitSearchMovieForm(e) {
   e.preventDefault();
 
-  queryValue = e.target.searchMovieQuery.value.trim();
-  if (!queryValue) {
+  queryMovie.value = e.target.searchMovieQuery.value.trim();
+  if (!queryMovie.value) {
     Notify.info('Please enter request');
     return;
   }
-  renderSearchMovies(queryValue, 1);
+  renderSearchMovies(queryMovie, 1);
 }
 
 export default onSubmitSearchMovieForm;

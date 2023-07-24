@@ -1,5 +1,4 @@
-import { genres } from '../home';
-import { BASE_POSTER_URL } from '../refs';
+import { BASE_POSTER_URL, genres } from '../refs';
 
 function createMarkupGalleryMoviesCard(movies) {
   return movies
@@ -13,7 +12,11 @@ function createMarkupGalleryMoviesCard(movies) {
       }) => `<li class="movie-card" data-id="${id}">
         <img 
           loading="lazy"
-          src="${BASE_POSTER_URL}${poster_path}"
+          src="${
+            poster_path
+              ? BASE_POSTER_URL + poster_path
+              : 'https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg'
+          }"
           alt="${title}"/>
           
         <div class="movie-card__content">

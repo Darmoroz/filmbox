@@ -15,10 +15,14 @@ async function renderSearchMovies(query, page) {
   }
   toggle(loader);
   try {
-    const response = await getMovies('search/movie', { query, page });
+    const response = await getMovies('search/movie', {
+      query: query.value,
+      page,
+    });
     const results = response.data.results;
+    const totalPages = response.data.total_pages;
     if (!results.length) {
-      Notify.info(`${query} nothing found. Try again.`, {
+      Notify.info(`${query.value} nothing found. Try again.`, {
         position: 'center-top',
         fontSize: '16px',
         info: {
@@ -26,7 +30,16 @@ async function renderSearchMovies(query, page) {
         },
       });
       searchMovieForm.searchMovieQuery.value = '';
-      // gallery.innerHTML = '';
+      return;
+    }
+    if (page > totalPages) {
+      Notify.info(`It was last page`, {
+        position: 'center-top',
+        fontSize: '16px',
+        info: {
+          textColor: '#000',
+        },
+      });
       return;
     }
 

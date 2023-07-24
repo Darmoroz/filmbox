@@ -5,7 +5,6 @@ import createMarkupGalleryMoviesCard from '../markup/createMarkupGalleryMoviesCa
 import renderMovieFullInfo from './renderMovieFullInfo';
 import { observerGalleryTrendMovies } from '../infiniteScroll';
 
-// *render trending movies
 async function renderTrendingMovies(page = 1) {
   toggle(loader);
   try {

@@ -4,6 +4,12 @@ export const ACCESS_TOKEN =
 
 //
 export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500/';
+export const DARK_THEME = 'dark';
+export const LIGHT_THEME = 'light';
+// localStorage
+export const WATCHED = 'watchedCollectionMovies';
+export const QUEUE = 'queueCollectionMovies';
+export const THEME = 'mainThemeFilmsbox';
 
 //class
 export const gallery = document.querySelector('.movies-gallery');
@@ -16,3 +22,8 @@ export const modalTrailer = document.getElementById('modal-trailer');
 export const toTopBtn = document.getElementById('to-top');
 export const toggleThemeBtn = document.getElementById('toggle-theme');
 export const searchMovieForm = document.getElementById('search-form');
+
+export const genres = {};
+export const pagination = { nextPagePagination: 1 };
+export const queryMovie = { value: '' };
+export const globalHandlers = {};

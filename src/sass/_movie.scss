@@ -53,6 +53,11 @@
       gap: 24px;
       color: #8c8c8c;
 
+      // .movie__info-block>span
+      & > span {
+        width: 50%;
+      }
+
       // .movie__info-block--dark
       &--dark {
         color: #111111;
