@@ -1,7 +1,8 @@
 import { toTopBtn } from './refs';
 
 function handleScroll(e) {
-  const currentScroll = document.body.scrollTop;
+  const currentScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
   const clientHeight = document.body.clientHeight;
 
   if (currentScroll >= clientHeight) {
@@ -27,10 +28,14 @@ function disableMouseWheelScrolling(e) {
 }
 
 function scrollStep() {
-  const currentScroll = document.body.scrollTop;
+  const currentScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
   const newScroll = currentScroll - 70;
-
-  document.body.scrollTo(0, newScroll);
+  if (!document.body.scrollTop) {
+    window.scrollTo(0, newScroll);
+  } else {
+    document.body.scrollTo(0, newScroll);
+  }
   if (newScroll > 0) {
     window.requestAnimationFrame(scrollStep);
   } else {

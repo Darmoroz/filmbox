@@ -35,8 +35,8 @@ function createMarkupMovieFullInfo(
         <p class="movie__description--about">${overview}</p>
     </div>
     <div class="btn__block" id="btn-collection">
-      <button class="btn btn--modify" type="button" data-value="watched" ${statusWathced}">ADD TO WATCHED</button>
-      <button class="btn btn--modify" type="button" data-value="queue" ${statusQueue}>ADD TO QUEUE</button>
+      <button class="btn btn--modify" type="button" data-movie-id="${id}" data-value="watched" ${statusWathced}">ADD TO WATCHED</button>
+      <button class="btn btn--modify" type="button" data-movie-id="${id}" data-value="queue" ${statusQueue}>ADD TO QUEUE</button>
     </div>
   </div></div>`;
 }

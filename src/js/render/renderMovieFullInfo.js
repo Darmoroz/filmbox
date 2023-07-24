@@ -39,7 +39,6 @@ async function renderMovieFullInfo(e) {
     const btnCollectionBlock = document.getElementById('btn-collection');
     globalHandlers.handleClickAddToCollection = function (e) {
       addToCollection(movie, e);
-      console.log('abra');
     };
 
     toggle(modal);

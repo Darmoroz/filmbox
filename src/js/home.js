@@ -22,6 +22,3 @@ window.addEventListener('DOMContentLoaded', async () => {
   } finally {
   }
 });
-
-// if (document.title === 'Filmsbox') {
-// }

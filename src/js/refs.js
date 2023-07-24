@@ -27,3 +27,11 @@ export const genres = {};
 export const pagination = { nextPagePagination: 1 };
 export const queryMovie = { value: '' };
 export const globalHandlers = {};
+
+//library page
+export const watchedBtnLibrary = document.querySelector(
+  'button[data-value="watched"]'
+);
+export const queueBtnLibrary = document.querySelector(
+  'button[data-value="queue"]'
+);

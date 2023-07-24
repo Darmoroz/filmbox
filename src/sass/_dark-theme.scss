@@ -35,15 +35,15 @@
   }
 
   // .dark-theme .btn
-  & .btn {
+  & .btn--modify {
     background-color: #ffffff;
 
-    // .dark-theme .btn:hover
+    // .dark-theme .btn--modify:hover
     &:hover {
       background-color: #ff6b08;
     }
 
-    // .dark-theme .btn:disabled
+    // .dark-theme .btn--modify:disabled
     &:disabled {
       background-color: #8c8c8c;
       color: #faebd7;

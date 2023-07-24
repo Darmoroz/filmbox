@@ -100,7 +100,18 @@ main {
   cursor: pointer;
   transition: background 500ms ease;
 
-  // .btn:hover, :focus
+  // .btn--active
+  &--active {
+    font-size: 20px;
+    &:disabled {
+      cursor: auto;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  // .btn:hover
   &:hover {
     background-color: #ff6b08;
   }
@@ -109,11 +120,8 @@ main {
   &__block {
     display: flex;
     gap: 12px;
-  }
-
-  // .btn--active
-  &--active {
-    background-color: #ff6b08;
+    justify-content: center;
+    align-items: center;
   }
 
   // .btn--modify
