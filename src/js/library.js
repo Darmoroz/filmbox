@@ -63,6 +63,12 @@ function renderLibraryMovies(btnType) {
   movies.forEach(element => {
     element['genre_ids'] = element.genres.map(ganre => ganre.id);
   });
+  if (!movies.length) {
+    console.log('abra');
+    gallery.innerHTML = '<p class="empty">empty list</p>';
+    console.dir(gallery);
+    return;
+  }
   const markup = createMarkupGalleryMoviesCard(movies);
   gallery.innerHTML = '';
   gallery.insertAdjacentHTML('beforeend', markup);
@@ -70,7 +76,6 @@ function renderLibraryMovies(btnType) {
 }
 
 async function renderMovieFullInfoLibrary(e) {
-  console.log(+e.target.closest('li').dataset.id);
   await renderMovieFullInfo(e);
   const currentType = document.querySelector('.btn--active').dataset.value;
   document.querySelectorAll('.btn--modify')[1].style.display = 'none';
