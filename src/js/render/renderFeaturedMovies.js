@@ -1,41 +1,23 @@
 import { Notify } from 'notiflix';
 import { getMovies } from '../api';
-import { featuredBtns, gallery, loader, searchMovieForm } from '../refs';
-import toggle from '../toggle';
 import createMarkupGalleryMoviesCard from '../markup/createMarkupGalleryMoviesCard';
+import { gallery, loader } from '../refs';
+import toggle from '../toggle';
 import {
-  observerGallerySearchMovies,
+  observerGalleryFeaturedMovies,
   resetNextPagePagination,
 } from '../infiniteScroll';
 
-async function renderSearchMovies(query, page) {
-  [...featuredBtns.querySelectorAll('.btn')].map(btn => {
-    btn.classList.remove('btn--active');
-    btn.removeAttribute('disabled');
-  });
+async function renderFeaturedMovies(urlPath, page = 1) {
   if (page === 1) {
     gallery.innerHTML = '';
     resetNextPagePagination();
   }
   toggle(loader);
   try {
-    const response = await getMovies('search/movie', {
-      query: query.value,
-      page,
-    });
+    const response = await getMovies(`movie/${urlPath}`, { page: page });
     const results = response.data.results;
     const totalPages = response.data.total_pages;
-    if (!results.length) {
-      Notify.info(`${query.value} nothing found. Try again.`, {
-        position: 'center-top',
-        fontSize: '16px',
-        info: {
-          textColor: '#000',
-        },
-      });
-      searchMovieForm.searchMovieQuery.value = '';
-      return;
-    }
     if (page > totalPages) {
       Notify.info(`It was last page`, {
         position: 'center-top',
@@ -46,13 +28,11 @@ async function renderSearchMovies(query, page) {
       });
       return;
     }
-
     const markup = createMarkupGalleryMoviesCard(results);
     gallery.insertAdjacentHTML('beforeend', markup);
-
     const lastCard = document.querySelector('.movie-card:last-child');
     if (lastCard) {
-      observerGallerySearchMovies.observe(lastCard);
+      observerGalleryFeaturedMovies.observe(lastCard);
     }
   } catch (error) {
     console.log('Error', error);
@@ -62,4 +42,4 @@ async function renderSearchMovies(query, page) {
   }
 }
 
-export default renderSearchMovies;
+export default renderFeaturedMovies;
