@@ -1,4 +1,4 @@
-import { searchMovieForm, urlPath } from './refs';
+import { gallery, searchMovieForm, urlPath } from './refs';
 import renderFeaturedMovies from './render/renderFeaturedMovies';
 import renderTrendingMovies from './render/renderTrendingMovies';
 
@@ -23,6 +23,7 @@ async function getFeaturedMovies(e) {
 
   switch (urlPath.value) {
     case 'trend_day':
+      gallery.innerHTML = '';
       renderTrendingMovies();
       break;
     case 'popular':
