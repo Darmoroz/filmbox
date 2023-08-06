@@ -90,7 +90,7 @@ main {
 }
 
 .btn {
-  width: 120px;
+  min-width: 120px;
   padding: 12px 0;
   text-transform: uppercase;
   color: #ffffff;
@@ -99,6 +99,11 @@ main {
   border-radius: 5px;
   cursor: pointer;
   transition: background 500ms ease;
+  @media (max-width: 420px) {
+    flex-basis: calc(
+      50% - 10px
+    ); /* Ширина кнопок 50% з урахуванням відступів */
+  }
 
   // .btn--active
   &--active {
@@ -124,6 +129,7 @@ main {
     gap: 12px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   // .btn--modify
